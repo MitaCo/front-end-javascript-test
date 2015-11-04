@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Cliniko: Burn cream</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic|Roboto+Slab:300" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" media="screen">
+  <link rel="stylesheet" href="/styles.css" media="screen">
+</head>
+
+<body>
+
+  <section class="page px3 max-px0" role="main">
+    <button class="button button--link mb3">Back to products</button>
+    <header class="flex flex-center flex-justify mb3">
+      <h1 class="h1">Burn cream</h1>
+      <div class="flex" role="toolbar">
+        <button class="button button--group">Edit product</button>
+        <button class="button button--group">Delete</button>
+      </div>
+    </header>
+    <div class="md-flex mb6">
+      <div class="md-col-6 lg-col-5 mb3 md-mb0 md-mr6 flex-none">
+        <dl class="definition-list">
+          <div class="definition-list__row">
+            <dt class="definition-list__dt">Item code</dt>
+            <dd class="definition-list__dd">123222</dd>
+          </div>
+          <div class="definition-list__row">
+            <dt class="definition-list__dt">Serial number</dt>
+            <dd class="definition-list__dd">12</dd>
+          </div>
+          <div class="definition-list__row">
+            <dt class="definition-list__dt">Supplier</dt>
+            <dd class="definition-list__dd">Derma</dd>
+          </div>
+          <div class="definition-list__row">
+            <dt class="definition-list__dt">Price (ex. tax)</dt>
+            <dd class="definition-list__dd">$24.00</dd>
+          </div>
+          <div class="definition-list__row">
+            <dt class="definition-list__dt">Cost price</dt>
+            <dd class="definition-list__dd">$12.00</dd>
+          </div>
+          <div class="definition-list__row">
+            <dt class="definition-list__dt">Stock level</dt>
+            <dd class="definition-list__dd">21</dd>
+          </div>
+        </dl>
+      </div>
+      <!--Only show if notes-->
+      <section class="note">
+        <h1 class="h2 mb3">Notes</h1>
+        <p class="prose">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tristique volutpat metus nec commodo. In hac habitasse platea dictumst.</p>
+      </section>
+    </div>
+    <section>
+      <header class="flex flex-center flex-justify mb3">
+        <div class="flex mr3">
+          <h1 class="h2">Stock Adjustments</h1>
+          <span class="callout">4</span>
+        </div>
+        <div role="toolbar">
+          <!-- You don't have to implement this -->
+          <button class="button">Adjust stock level</button>
+        </div>
+      </header>
+      <div class="mxn3 max-mx0">
+        <table class="table mb6">
+          <tbody>
+            <tr class="table__row-header">
+              <th class="table__cell-header">Adjustment type</th>
+              <th class="table__cell-header">Quantity</th>
+              <th class="table__cell-header">Adjusted at</th>
+              <th class="table__cell-header">Adjusted by</th>
+              <th class="table__cell-header">Notes</th>
+            </tr>
+            <tr class="table__row">
+              <td class="table__cell" data-label="Adjustment type">Other</td>
+              <td class="table__cell" data-label="Quantity">20</td>
+              <td class="table__cell" data-label="Adjusted at">30 Oct 2015, 2:03PM</td>
+              <td class="table__cell" data-label="Adjusted by">Elizabeth Hans</td>
+              <td class="table__cell" data-label="Notes">Mistake. I only meant to mark one sold on the last transaction.</td>
+            </tr>
+            <tr class="table__row bg-silver">
+              <td class="table__cell" data-label="Adjustment type">Item Sold</td>
+              <td class="table__cell" data-label="Quantity">-21</td>
+              <td class="table__cell" data-label="Adjusted at">30 Oct 2015, 2:02PM</td>
+              <td class="table__cell" data-label="Adjusted by">Elizabeth Hans</td>
+              <td class="table__cell" data-label="Notes"></td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__cell" data-label="Adjustment type">Stock Purchase</td>
+              <td class="table__cell" data-label="Quantity">10</td>
+              <td class="table__cell" data-label="Adjusted at">30 Oct 2015, 1:59PM</td>
+              <td class="table__cell" data-label="Adjusted by">Elizabeth Hans</td>
+              <td class="table__cell" data-label="Notes">Had to buy at least 10 to get current price.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </section>
+
+</body>
+
+</html>

@@ -1,0 +1,597 @@
+$border-radius: 4px
+$border-radius--small: 2px
+$color--action: #EE2B89
+$color--error: #cb4141
+$color--warning: #f3ec7f
+$color--success: #bed162
+$color--primary: #2795D9
+$color--primary-light: lighten($color--primary, 5)
+$color--primary-lighter: adjust_hue(saturate(lighten($color--primary-light, 14), 14), 357)
+$color--primary-lightest: lighten($color--primary-lighter, 15)
+$color--table-header: lighten($color--primary-lighter, 25)
+$color--secondary: #494A4C
+$color--secondary: #494A4C
+$color--secondary-light: lighten($color--secondary, 15)
+$color--secondary-lighter: lighten($color--secondary, 40)
+$color--secondary-lighter-still: lighten($color--secondary, 50)
+$color--secondary-much-lighter: lighten($color--secondary, 60)
+$color--secondary-lightest: lighten($color--secondary, 68)
+$color--error: #cb4141
+$color--paper: #f2eed3
+$color--input-line: #afb0b2
+$color--line: #d5d5d5
+$color--line-light: #f1f1f1
+$color--line-input: #afb0b2
+$color--body-font: #3a3a3a
+$font--body: 'Source Sans Pro', sans-serif
+$font--heading: 'Roboto Slab', serif
+$font--body-size: .875rem
+$font--h1-size: 1.75rem
+$font--h2-size: 1.625rem
+$font--h3-size: 1.3125rem
+$max-width: 60rem
+$large: 48rem
+$medium: 36rem
+
+// Reset
+html
+  box-sizing: border-box
+
+*,
+*::before,
+*::after
+  box-sizing: inherit
+
+body
+  font-family: 'Source Sans Pro', sans-serif
+  font-size: 87.5%
+  font-weight: 400
+  color: $color--body-font
+  line-height: 1
+
+// Typography
+h1,
+h2
+  padding: 0
+  margin: 0
+
+fieldset
+  padding: 0
+  border: 0
+
+p
+  margin: 0
+
+.h1
+  font-family: 'Roboto Slab', serif
+  font-size: $font--h2-size
+  font-weight: 300
+  line-height: 1.1
+
+  @media (min-width: $medium)
+    font-size: $font--h1-size
+
+.h2
+  font-family: 'Roboto Slab', serif
+  font-size: $font--h3-size
+  font-weight: 300
+  line-height: 1.1
+
+.bold
+  font-weight: 600
+
+.prose
+  line-height: 1.5
+  max-width: 36em
+
+// Helpers
+.m1
+  margin: 5px
+
+.mb1
+  margin-bottom: 5px
+
+.mb2
+  margin-bottom: 10px
+
+.mb3
+  margin-bottom: 15px
+
+.mr1
+  margin-right: 5px
+
+.mt1
+  margin-top: 5px
+
+.mt4
+  margin-top: 20px
+
+.mr2
+  margin-right: 10px
+
+.md-mb0
+  @media (min-width: $medium)
+    margin-bottom: 0
+
+.md-mr6
+  @media (min-width: $medium)
+    margin-right: 30px
+
+.mr3
+  margin-right: 15px
+
+.mb6
+  margin-bottom: 30px
+
+.md-mr2
+  @media (min-width: $medium)
+    margin-right: 10px
+
+.mxn3
+  margin-left: -15px
+  margin-right: -15px
+
+.max-mx0
+  @media (min-width: $max-width)
+    margin-left: 0
+    margin-right: 0
+
+.px3
+  padding-left: 15px
+  padding-right: 15px
+
+.max-px0
+  @media (min-width: $max-width)
+    padding-left: 0
+    padding-right: 0
+
+.py2
+  padding-top: 10px
+  padding-bottom: 10px
+
+.pb1
+  padding-bottom: 5px
+
+.border-b
+  border-bottom: 1px solid $color--line
+
+.flex
+  display: flex
+
+.md-flex
+  @media (min-width: $medium)
+    display: flex
+
+.flex-none
+  flex: 0 0 auto
+
+.md-flex-none
+  @media (min-width: $medium)
+    flex: 0 0 auto
+
+.lg-flex-none
+  @media (min-width: $large)
+    flex: 0 0 auto
+
+.flex-justify
+  justify-content: space-between
+
+.flex-grow
+  flex: 1 1 auto
+
+.flex-center
+  align-items: center
+
+.flex-self-center
+  align-self: center
+
+.col-6
+  width: 50%
+
+.md-col-3
+  @media (min-width: $medium)
+    width: 25%
+
+.md-col-4
+  @media (min-width: $medium)
+    width: 33.333334%
+
+.md-col-6
+  @media (min-width: $medium)
+    width: 50%
+
+.md-col-9
+  @media (min-width: $medium)
+    width: 66.666667%
+
+.lg-col-4
+  @media (min-width: $large)
+    width: 33.333334%
+
+.lg-col-5
+  @media (min-width: $large)
+    width: 5/12 * 100%
+
+// Page
+.page
+  margin: 30px auto
+  max-width: $max-width
+  min-width: 320px
+
+// Controls
+.controls
+  padding: 15px
+  border: 1px solid $color--line
+  border-left-width: 0
+  border-right-width: 0
+
+  @media (min-width: $large)
+    border-left-width: 1px
+    border-right-width: 1px
+    border-radius: $border-radius
+
+// Button
+.button
+  background: white
+  box-shadow: 0 2px rgba($color--secondary, .05)
+  padding: 7px 11px 8px
+  border: none
+  border: 1px solid $color--line-input
+  border-radius: $border-radius
+  line-height: 1.25
+  -webkit-font-smoothing: antialiased
+  font-smoothing: antialiased
+
+  &:hover
+    background: $color--secondary-lightest
+
+  &:focus
+    outline: 1px dashed $color--action
+    outline-offset: 2px
+
+  &.color-action
+    font-weight: 600
+    text-shadow: 0 1px rgba(black,.2)
+
+    &:hover,
+    &:focus
+      background: darken($color--action, 7)
+
+    &:focus
+      color: white
+
+  &:disabled
+    background: $color--secondary-lightest
+    color: $color--secondary-lighter
+    cursor: default
+    border: 1px solid $color--line-light
+    text-shadow: none
+    pointer-events: none
+
+.button--link
+  display: inline
+  background: none
+  box-shadow: none
+  color: $color--action
+  padding-left: 0
+  padding-right: 0
+  border: 0
+  text-decoration: underline
+
+  &:hover,
+  &:focus
+    background: none
+
+.button--group
+  margin-left: -1px
+  border-radius: 0
+
+  &:first-child
+    margin-left: 0
+    border-top-left-radius: $border-radius
+    border-bottom-left-radius: $border-radius
+
+  &:not([style*="display: none"]):last-child
+    border-top-right-radius: $border-radius
+    border-bottom-right-radius: $border-radius
+
+// Colors
+.color-action
+  background: $color--action
+  color: white
+  border: 1px solid darken($color--action, 12)
+
+.color-gray
+  color: $color--secondary-lighter
+
+.color-error
+  color: $color--error
+
+.bg-error
+  background-color: $color--error
+
+.bg-success
+  background-color: $color--success
+
+.bg-warning
+  background-color: $color--warning
+
+.bg-silver
+  background-color: $color--secondary-lightest
+
+// Visibility
+.is-hidden
+  display: none
+
+.is-visually-hidden
+  position: absolute !important
+  overflow: hidden
+  width: 1px
+  height: 1px
+  clip: rect(1px, 1px, 1px, 1px)
+
+// Callout
+.callout
+  align-self: center
+  position: relative
+  font-family: $font--body
+  font-size: .875rem
+  font-weight: 400
+  background: $color--primary
+  color: white
+  padding: 5px
+  margin-left: 15px
+  border-radius: $border-radius--small
+  text-align: center
+  min-width: 30px
+
+  &::before
+    content: ''
+    position: absolute
+    top: calc(50% - 5px)
+    bottom: 0
+    left: -4px
+    right: 0
+    border-top: 5px solid transparent
+    border-bottom: 5px solid transparent
+    border-right: 5px solid $color--primary
+    width: 0
+    height: 0
+
+// Table
+.table
+  border-spacing: 0
+  width: 100%
+  border-collapse: separate
+
+.table__row-header
+  display: none
+  visibility: hidden
+
+  @media (min-width: $medium)
+    display: table-row
+    visibility: visible
+
+.table__cell-header
+  font-weight: 400
+  background: $color--table-header
+  color: $color--primary
+  padding: 15px
+  border-top: 1px solid $color--primary-lightest
+  border-bottom: 1px solid $color--primary-lightest
+  text-align: left
+  text-transform: uppercase
+
+  @media (min-width: $max-width)
+    &:first-child
+      border-left: 1px solid $color--primary-lightest
+      border-top-left-radius: $border-radius
+
+    &:last-child
+      border-right: 1px solid $color--primary-lightest
+      border-top-right-radius: $border-radius
+
+.table__row
+  &:last-child
+    .table__cell
+      @media (min-width: $max-width)
+        border-bottom: 1px solid $color--line
+
+      &:first-child
+        @media (min-width: $max-width)
+          border-bottom-left-radius: $border-radius
+
+      &:last-child
+        @media (min-width: $max-width)
+          border-bottom-right-radius: $border-radius
+
+        @media (max-width: $medium)
+          border-bottom: 1px solid $color--line-light
+
+  &:first-child
+    border-top: 1px solid $color--line
+
+    @media (min-width: $medium)
+      border-top: none
+
+  &:hover
+    background: lighten($color--action, 42)
+
+
+.table__cell
+  display: flex
+  padding: 10px 15px
+
+  @media (min-width: $medium)
+    display: table-cell
+    padding: 15px
+    border-bottom: 1px solid $color--line-light
+
+  &:first-child
+    font-weight: 600
+    color: $color--primary
+    padding-top: 15px
+    border-top: 1px solid $color--line-light
+
+    @media (min-width: $medium)
+      padding-top: auto
+      border-top: 0
+
+    @media (min-width: $large)
+      border-left: 1px solid $color--line
+
+  &:last-child
+    padding-bottom: 15px
+
+    @media (min-width: $large)
+      border-right: 1px solid $color--line
+
+  &::before
+    content: attr(data-label)
+    align-self: center
+    flex: 0 0 auto
+    font-weight: 600
+    color: #2795d9
+    width: 50%
+    text-transform: uppercase
+
+    @media (min-width: $medium)
+      display: none
+
+.form__label
+  display: block
+  font-weight: 600
+  color: $color--primary
+
+.form__input
+  display: block
+  position: relative
+  color: $color--body-font
+  padding: 7px 8px 8px
+  border: 1px solid $color--input-line
+  border-radius: $border-radius
+  width: 100%
+
+  &:focus
+    box-shadow: 0 0 0 2px rgba($color--primary-lightest, 1)
+    border-color: $color--primary-lighter
+    outline: none
+    z-index: 1
+
+  &:disabled
+    background-color: $color--secondary-much-lighter
+    border-color: $color--secondary-lighter
+
+  &::after
+    content: 'Price is required'
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: silver
+    transform: translateY(-100%)
+
+  &.has-error
+    background-color: rgba($color--error, .05)
+    box-shadow: inset 0 0 3px 0 $color--error
+    border-color: $color--error
+    border-left-width: 1px
+
+    &:focus
+      box-shadow: 0 0 0 2px rgba($color--primary-lightest, 1)
+
+.form__input--text
+  appearance: none
+
+.form__input--number
+  width: 8em
+  appearance: textfield
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button
+    margin: 0
+    -webkit-appearance: none
+
+.form__addon
+  display: flex
+
+.form__addon__span
+  align-self: stretch
+  font-weight: bold
+  background: $color--secondary-lightest
+  color: $color--secondary-light
+  padding: 8px 12px 7px
+  border: 1px solid $color--input-line
+  border-top-left-radius: $border-radius
+  border-bottom-left-radius: $border-radius
+
+.form__addon__input
+  border-left-width: 0
+  border-top-left-radius: 0
+  border-bottom-left-radius: 0
+
+  &:focus
+    border-left-width: 1px
+
+.form__checkbox
+  margin-right: 5px
+
+.form__select
+  display: block
+  background: white top 8px right 5px no-repeat url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve"><path fill="#D8D8D8" d="M35,17.5c-0.6,0-1.3-0.2-1.8-0.7L25,8.5l-8.2,8.2c-1,1-2.6,1-3.5,0c-1-1-1-2.6,0-3.5l10-10c1-1,2.6-1,3.5,0l10,10c1,1,1,2.6,0,3.5C36.3,17.3,35.6,17.5,35,17.5z M25,47.5c-0.6,0-1.3-0.2-1.8-0.7l-10-10c-1-1-1-2.6,0-3.5c1-1,2.6-1,3.5,0l8.2,8.2l8.2-8.2c1-1,2.6-1,3.5,0c1,1,1,2.6,0,3.5l-10,10C26.3,47.3,25.6,47.5,25,47.5z"/></svg>')
+  background: white 98% 5px no-repeat url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve"><path fill="#D8D8D8" d="M35,17.5c-0.6,0-1.3-0.2-1.8-0.7L25,8.5l-8.2,8.2c-1,1-2.6,1-3.5,0c-1-1-1-2.6,0-3.5l10-10c1-1,2.6-1,3.5,0l10,10c1,1,1,2.6,0,3.5C36.3,17.3,35.6,17.5,35,17.5z M25,47.5c-0.6,0-1.3-0.2-1.8-0.7l-10-10c-1-1-1-2.6,0-3.5c1-1,2.6-1,3.5,0l8.2,8.2l8.2-8.2c1-1,2.6-1,3.5,0c1,1,1,2.6,0,3.5l-10,10C26.3,47.3,25.6,47.5,25,47.5z"/></svg>')
+  background-size: 14px
+  box-shadow: 0 2px rgba($color--secondary, .05)
+  padding: 7px 24px 8px 8px
+  line-height: 18px
+  width: auto
+  text-overflow: ''
+  appearance: none
+  text-indent: 0.01px
+
+  &:focus
+    background-image:  url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve"><path fill="#1C94DC" d="M35,17.5c-0.6,0-1.3-0.2-1.8-0.7L25,8.5l-8.2,8.2c-1,1-2.6,1-3.5,0c-1-1-1-2.6,0-3.5l10-10c1-1,2.6-1,3.5,0l10,10c1,1,1,2.6,0,3.5C36.3,17.3,35.6,17.5,35,17.5z M25,47.5c-0.6,0-1.3-0.2-1.8-0.7l-10-10c-1-1-1-2.6,0-3.5c1-1,2.6-1,3.5,0l8.2,8.2l8.2-8.2c1-1,2.6-1,3.5,0c1,1,1,2.6,0,3.5l-10,10C26.3,47.3,25.6,47.5,25,47.5z"/></svg>')
+    background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve"><path fill="#1C94DC" d="M35,17.5c-0.6,0-1.3-0.2-1.8-0.7L25,8.5l-8.2,8.2c-1,1-2.6,1-3.5,0c-1-1-1-2.6,0-3.5l10-10c1-1,2.6-1,3.5,0l10,10c1,1,1,2.6,0,3.5C36.3,17.3,35.6,17.5,35,17.5z M25,47.5c-0.6,0-1.3-0.2-1.8-0.7l-10-10c-1-1-1-2.6,0-3.5c1-1,2.6-1,3.5,0l8.2,8.2l8.2-8.2c1-1,2.6-1,3.5,0c1,1,1,2.6,0,3.5l-10,10C26.3,47.3,25.6,47.5,25,47.5z"/></svg>')
+
+.form__option
+  background-color: white
+
+.form__textarea
+  min-height: 90px
+
+// Definition List
+.definition-list
+  margin: 0
+  border: 1px solid $color--line
+  border-radius: $border-radius
+
+.definition-list__row
+  display: flex
+  padding: 15px
+  border-bottom: 1px solid $color--line-light
+
+  &:last-child
+    border-bottom: 0
+    border-bottom-left-radius: $border-radius
+    border-bottom-right-radius: $border-radius
+
+  &:nth-child(even)
+    background: $color--secondary-lightest
+
+.definition-list__dt
+  font-weight: 600
+  color: $color--primary
+  width: 40%
+
+.definition-list__dd
+  padding: 0 10px
+  margin: 0
+  width: 60%
+
+// Note
+.note
+  background: lighten($color--paper, 7)
+  padding: 15px
+  border: 1px solid $color--paper
+  border-radius: $border-radius

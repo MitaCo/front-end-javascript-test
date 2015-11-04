@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Cliniko: New product</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic|Roboto+Slab:300" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" media="screen">
+  <link rel="stylesheet" href="/styles.css" media="screen">
+</head>
+
+<body>
+
+  <section class="page px3 max-px0" role="main">
+    <!--if editing... Editing {{product.name}}-->
+    <h1 class="h1 mb3">Add a new product</h1>
+    <form>
+      <fieldset class="form__fieldset mb3">
+        <div class="md-flex">
+          <div class="mb2 md-col-6 lg-col-4 md-mr2">
+            <label class="form__label mb1" for="item-code">Item code</label>
+            <input autofocus="" class="form__input form__input--text" id="item-code" type="text" />
+          </div>
+          <div class="mb2 md-col-6 lg-col-4">
+            <label class="form__label mb1" for="name">Name</label>
+            <input class="form__input form__input--text has-error" id="name" required="" type="text" />
+            <div class="color-error bold mt1">Name can&rsquo;t be blank</div>
+          </div>
+        </div>
+        <div class="md-flex">
+          <div class="mb2 md-col-6 lg-col-4 md-mr2">
+            <label class="form__label mb1" for="serial-number">Serial number</label>
+            <input class="form__input form__input--text" id="serial-number" type="text" />
+          </div>
+          <div class="mb2 md-col-6 lg-col-4">
+            <label class="form__label mb1" for="supplier">Supplier</label>
+            <input class="form__input form__input--text" id="supplier" type="text" />
+          </div>
+        </div>
+        <div class="mb2">
+          <label class="form__label mb1" for="price">Price</label>
+          <div class="flex flex-center">
+            <div class="form__addon mr2">
+              <span class="form__addon__span">$</span>
+              <input class="form__input form__input--number form__addon__input has-error" id="price" type="number" />
+            </div>
+            <label class="form__label">
+              <input class="form__checkbox" type="checkbox" />Price includes tax</label>
+          </div>
+          <div class="color-error bold mt1">Price can&rsquo;t be blank</div>
+        </div>
+        <div class="md-flex">
+          <div class="mb2 md-mr2 flex-none">
+            <label class="form__label mb1" for="tax">Tax</label>
+            <select class="form__input form__select" id="tax">
+              <option class="form__option">N/A</option>
+              <option class="form__option" value="10">GST (10.0%)</option>
+              <option class="form__option" value="7">MST (7.0%)</option>
+            </select>
+          </div>
+          <div class="mb2 md-mr2">
+            <label class="form__label mb1" for="cost-price">Cost price</label>
+            <div class="form__addon">
+              <span class="form__addon__span">$</span>
+              <input class="form__input form__input--number form__addon__input" id="cost-price" type="number" />
+            </div>
+          </div>
+          <div class="mb2">
+            <!--if editing...-->
+            <!--<label class="form__label mb1" for="stock-level">Current stock level</label>-->
+            <!--<input class="form__input form__input--number" id="stock-level" type="number" disabled value={{product.stock}} />-->
+            <label class="form__label mb1" for="stock-level">Stock level</label>
+            <input class="form__input form__input--number" id="stock-level" type="number" />
+          </div>
+        </div>
+        <div class="mb2 prose">
+          <label class="form__label mb1" for="notes">Notes</label>
+          <textarea class="form__input form__textarea" id="notes"></textarea>
+        </div>
+      </fieldset>
+      <!--if editing... "Update product"-->
+      <button class="button color-action mr1" type="submit">Create product</button>
+      <button class="button" type="submit">Cancel</button>
+    </form>
+  </section>
+
+</body>
+
+</html>
