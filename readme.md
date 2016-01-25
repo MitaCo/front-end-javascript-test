@@ -5,7 +5,7 @@ We would like you to build a simple **single page app** for managing products vi
 
 We are interested in seeing a modular, component-based approach to the UI and models. You can build this using whatever framework and tooling that you like. If you know Angular, we'd love to see it built with that.
 
-For the purpose of this test you don't need to worry about user logins or pagination. The HTML and styles are provided. You should have already received an API key for a test account with the data you need.
+For the purpose of this test you don't need to worry about user logins or pagination. The HTML and styles are provided. You can get an API key by signing up for a free trial of Cliniko. You'll need to create some products in there for test data.
 
 ## Products Index Page: /products
 - Get the [Products](https://github.com/redguava/cliniko-api/blob/master/sections/products.md) and build the table.
