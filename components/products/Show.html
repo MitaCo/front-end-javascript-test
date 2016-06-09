@@ -1,0 +1,77 @@
+  <section class="page px3 max-px0" role="main">
+    <a class="button button--link mb3" ng-href="/">Back to products</a>
+    <header class="flex flex-center flex-justify mb3">
+      <h1 class="h1">Burn cream</h1>
+      <div class="flex" role="toolbar">
+        <a class="button button--group" ng-href="/product/{{show.item.id}}/edit">Edit product</a>
+        <button class="button button--group" ng-click="show.delete(show.item.id)">Delete</button>
+      </div>
+    </header>
+    <div class="md-flex mb6">
+      <div class="md-col-6 lg-col-5 mb3 md-mb0 md-mr6 flex-none">
+        <dl class="definition-list">
+          <div class="definition-list__row">
+            <dt class="definition-list__dt">Item code</dt>
+            <dd class="definition-list__dd">{{show.item.code}}</dd>
+          </div>
+          <div class="definition-list__row">
+            <dt class="definition-list__dt">Serial number</dt>
+            <dd class="definition-list__dd">{{show.item.serial_number}}</dd>
+          </div>
+          <div class="definition-list__row">
+            <dt class="definition-list__dt">Supplier</dt>
+            <dd class="definition-list__dd">{{show.item.product_supplier_name}}</dd>
+          </div>
+          <div class="definition-list__row">
+            <dt class="definition-list__dt">Price (ex. tax)</dt>
+            <dd class="definition-list__dd">{{show.item.priceWithoutTax() | currency }}</dd>
+          </div>
+          <div class="definition-list__row">
+            <dt class="definition-list__dt">Cost price</dt>
+            <dd class="definition-list__dd">{{show.item.cost_price | currency }}</dd>
+          </div>
+          <div class="definition-list__row">
+            <dt class="definition-list__dt">Stock level</dt>
+            <dd class="definition-list__dd">{{show.item.stock_level}}</dd>
+          </div>
+        </dl>
+      </div>
+      <!--Only show if notes-->
+      <section class="note">
+        <h1 class="h2 mb3">Notes</h1>
+        <p class="prose">{{show.item.notes}}</p>
+      </section>
+    </div>
+    <section>
+      <header class="flex flex-center flex-justify mb3">
+        <div class="flex mr3">
+          <h1 class="h2">Stock Adjustments</h1>
+          <span class="callout">{{show.item.stockAdjusments.length}}</span>
+        </div>
+        <div role="toolbar">
+          <!-- You don't have to implement this -->
+          <button class="button">Adjust stock level</button>
+        </div>
+      </header>
+      <div class="mxn3 max-mx0">
+        <table class="table mb6">
+          <tbody>
+            <tr class="table__row-header">
+              <th class="table__cell-header">Adjustment type</th>
+              <th class="table__cell-header">Quantity</th>
+              <th class="table__cell-header">Adjusted at</th>
+              <th class="table__cell-header">Adjusted by</th>
+              <th class="table__cell-header">Notes</th>
+            </tr>
+            <tr class="table__row" ng-class-even="'bg-silver'" ng-repeat="stock in show.item.stockAdjusments">
+              <td class="table__cell" data-label="Adjustment type">{{stock.adjustment_type}}</td>
+              <td class="table__cell" data-label="Quantity">{{stock.quantity}}</td>
+              <td class="table__cell" data-label="Adjusted at">{{stock.created_at | date:'d MMM yyyy, h:mm a'}}</td>
+              <td class="table__cell" data-label="Adjusted by">Elizabeth Hans</td>
+              <td class="table__cell" data-label="Notes">{{stock.comment}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </section>

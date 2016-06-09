@@ -1,0 +1,68 @@
+  <section class="page px3 max-px0" role="main">
+    <h1 class="h1 mb3" ng-if="!edit.item.id">Add a new product</h1>
+    <h1 class="h1 mb3" ng-if="edit.item.id">Editing {{edit.item.name}}</h1>
+    <form name="form">
+      <fieldset class="form__fieldset mb3">
+        <div class="md-flex">
+          <div class="mb2 md-col-6 lg-col-4 md-mr2">
+            <label class="form__label mb1" for="item-code">Item code</label>
+            <input autofocus="" ng-model="edit.item.code" class="form__input form__input--text" id="item-code" type="text" />
+          </div>
+          <div class="mb2 md-col-6 lg-col-4">
+            <label class="form__label mb1" for="name">Name</label>
+            <input class="form__input form__input--text" ng-class="{'has-error': form.name.$touched && form.name.$error.required}" name="name" ng-model="edit.item.name" id="name" required aria-required="true" type="text" />
+            <div class="color-error bold mt1" ng-show="form.name.$touched && form.name.$error.required">Name can&rsquo;t be blank</div>
+          </div>
+        </div>
+        <div class="md-flex">
+          <div class="mb2 md-col-6 lg-col-4 md-mr2">
+            <label class="form__label mb1" for="serial-number">Serial number</label>
+            <input class="form__input form__input--text" ng-model="edit.item.serial_number" id="serial-number" type="text" />
+          </div>
+          <div class="mb2 md-col-6 lg-col-4">
+            <label class="form__label mb1" for="supplier">Supplier</label>
+            <input class="form__input form__input--text" ng-model="edit.item.product_supplier_name" id="supplier" type="text" />
+          </div>
+        </div>
+        <div class="mb2">
+          <label class="form__label mb1" for="price">Price</label>
+          <div class="flex flex-center">
+            <div class="form__addon mr2">
+              <span class="form__addon__span">$</span>
+              <input class="form__input form__input--number form__addon__input" ng-class="{'has-error': form.price.$touched && form.price.$error.required}" name="price" ng-model="edit.item.price" required aria-required="true" id="price" type="number" />
+            </div>
+            <label class="form__label">
+              <input class="form__checkbox" type="checkbox"  ng-model="edit.item.taxIncluded" />Price includes tax</label>
+          </div>
+          <div class="color-error bold mt1" ng-show="form.price.$touched && form.price.$error.required">Price can&rsquo;t be blank</div>
+        </div>
+        <div class="md-flex">
+          <div class="mb2 md-mr2 flex-none">
+            <label class="form__label mb1" for="tax">Tax</label>
+            <select class="form__input form__select" id="tax" ng-model="edit.item.tax" ng-options="value*1 as label for (value, label) in edit.taxes">
+              <!-- <option class="form__option">N/A</option> -->
+              <!-- <option class="form__option" value="10">GST (10.0%)</option> -->
+              <!-- <option class="form__option" value="7">MST (7.0%)</option> -->
+            </select>
+          </div>
+          <div class="mb2 md-mr2">
+            <label class="form__label mb1" for="cost-price">Cost price</label>
+            <div class="form__addon">
+              <span class="form__addon__span">$</span>
+              <input class="form__input form__input--number form__addon__input" ng-model="edit.item.cost_price" id="cost-price" type="number" />
+            </div>
+          </div>
+          <div class="mb2">
+            <label class="form__label mb1" for="stock-level">{{!edit.item.id ? 'Stock level' : 'Current stock level'}}</label>
+            <input class="form__input form__input--number" ng-model="edit.item.stock_level" id="stock-level" type="number" />
+          </div>
+        </div>
+        <div class="mb2 prose">
+          <label class="form__label mb1" for="notes">Notes</label>
+          <textarea class="form__input form__textarea" ng-model="edit.item.notes" id="notes"></textarea>
+        </div>
+      </fieldset>
+      <button class="button color-action mr1" ng-click="edit.save(edit.item, form.$valid)">{{!edit.item.id ? 'Create product' : 'Update product'}}</button>
+      <button class="button" ng-click="edit.cancel()">Cancel</button>
+    </form>
+  </section>

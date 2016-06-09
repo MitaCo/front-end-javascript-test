@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="MasterController as master">
+
+<head>
+  <title>{{master.metadata.title}}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic|Roboto+Slab:300" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" media="screen">
+  <link rel="stylesheet" href="/static/styles.css" media="screen">
+</head>
+
+<body>
+  <base href="/">
+  <ng-view></ng-view>
+  <script src="/static/bundle.js"></script>
+</body>
+
+
+</html>
