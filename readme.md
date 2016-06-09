@@ -24,7 +24,9 @@ end
 ```
 Because of different ports I was using for Angular app (webpack) and Rails I need here CORS headers.
 
-Then I changed my front-end app to use this proxy as API endpoint. GET requests worked but I have some problem with POST/PUT requests. I tried to figure out what is problem with RestClient but didn't wanted to spent too much time on it so I left as is. ( P.S. There is a validation error on [this example](https://github.com/redguava/cliniko-api/blob/master/sections/products.md#create-product) ) App now get products from API but does not store or delete changes - that is handled only on front-end.
+Then I changed my front-end app to use this proxy as API endpoint. GET requests worked but I have some problem with POST/PUT requests. I tried to figure out what is problem with RestClient but didn't wanted to spent too much time on it so I left as is. ( P.S. There is a validation error in [this example](https://github.com/redguava/cliniko-api/blob/master/sections/products.md#create-product) )
+
+App now get products from API but does not store or delete changes - that is handled only on front-end.
 
 ## Known bad parts of app
 * no production build (missing production webpack config) so builded app is huge
