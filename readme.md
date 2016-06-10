@@ -32,6 +32,7 @@ App now get products from API but does not store or delete changes - that is han
 * no production build (missing production webpack config) so builded app is huge
 * when you add new product or edit existing changes are not stored and they are reseted on each new API request
 * controllers are not covered with tests
+* There is no loading state (spinner or something like that)
 
 
 ## Installation
